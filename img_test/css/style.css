@@ -1,0 +1,6 @@
+body {margin: 0; padding: 0; width: 100vw; height: 100vh; overflow-x: hidden; }
+
+.text { position: absolute; z-index: -1; font-size: 50px; color: black; mix-blend-mode:multiply; }
+.img {    }
+
+.black {  background: #000000; width: 200px; height: 100px; }
