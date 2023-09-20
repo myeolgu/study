@@ -1,0 +1,140 @@
+@import url('./reset.css');
+@font-face {
+  font-family: 'Pretendard';
+  src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard.woff') format('woff');
+}
+
+body { 
+  font-family: 'Pretendard';
+  margin:0; 
+  padding:0; 
+}
+
+:root {
+  --pc-width: 1400px;
+}
+
+.hide-txt {
+  position:absolute !important;  
+  width:1px; 
+  height:1px; 
+  overflow:hidden;
+  clip:rect(1px 1px 1px 1px); 
+  clip:rect(1px, 1px, 1px, 1px)
+}
+
+header { 
+  position: relative; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 120px; 
+  line-height: 120px;
+  text-align: center;
+  .logo {
+    width:66px;
+    height: 53px;
+    background: url('../image/logo.png') 50% 50% / 100% no-repeat;
+  }
+} 
+
+.container {
+  display: grid;
+}
+
+.contents {
+  position: relative;
+  margin: 0 auto;
+  width: 100%;
+  max-width: var(--pc-width);
+  .tit {
+    margin-top:60px;
+    font-size:45px;
+    font-weight: 700;
+  }
+
+  .breadcrumbs {
+    font-size: 20px;
+    font-weight: 500;
+    color:#999;
+  }
+
+  .template {
+    margin-top:40px;
+  }
+
+  .template .signiel_list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .template .signiel_list li {
+    display: flex;
+    max-width: 850px;
+    margin-bottom:50px;
+  }
+
+  .template .signiel_list li:nth-child(2n+1) {
+    position: relative;
+    left:50px;
+  }
+
+  .template .signiel_list li:nth-child(2n) {
+    position: relative;
+    left:-50px;
+  }
+
+  .template .signiel_list .info {
+    display: flex;
+    align-items: center;
+    padding: 0 20px;    
+  }
+
+  .template .signiel_list li.reverse .info {
+    order:-1;
+    padding-left: inherit;
+    padding-right: 100px;
+  }
+
+  .template .signiel_list li:last-child {
+    margin-bottom: 0;
+  }
+
+  .template .signiel_list .img {
+    max-width: 400px;
+  }
+
+  .template .signiel_list .img img {
+    display: block;
+  }
+
+  .template .signiel_list {
+    counter-reset: my-counter;
+  }
+
+  .template .signiel_list .info dl dt {
+    font-size:30px;
+    font-weight: 500;
+    line-height: 1.2;
+  }
+
+  .template .signiel_list .info dl dd {
+    font-size:20px;
+    font-weight: 400;
+    color: #222;
+    margin-top:10px;
+  }
+
+  .template .signiel_list .info dl dt::before { 
+    content:counter(my-counter, decimal-leading-zero) ""; 
+    counter-increment: my-counter;
+    display: block;
+    font-size: 30px;
+    font-weight: 700;
+  }
+}
+
+
+
+
