@@ -24,8 +24,9 @@ body {
 }
 
 header {
-  position: relative;
+  position: fixed;
   display: flex;
+  width: 100%;
   align-items: center;
   justify-content: center;
   height: 120px;
@@ -44,10 +45,11 @@ header .logo {
 
 .contents {
   position: relative;
-  display: grid;
-  max-width: 1400px;
+  display: flex;
+  justify-content: center;
   margin: 0 auto;
   width: 100%;
+  height: 100vh;
 }
 .contents .tit {
   margin-top: 60px;
@@ -63,11 +65,11 @@ header .logo {
   margin-top: 40px;
 }
 .contents .header-img {
+  width: 100%;
   display: grid;
   gap: 20px;
   grid-template-columns: repeat(3, 1fr);
   align-items: end;
-  margin-top: 40px;
 }
 .contents .header-img img {
   display: block;
@@ -97,6 +99,7 @@ header .logo {
   align-self: start;
 }
 .contents .header-img .cont-img.five {
+  align-self: start;
   width: auto;
   height: 400px;
 }
