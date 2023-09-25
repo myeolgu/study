@@ -1,13 +1,45 @@
-.swiper-container {
-  position: relative;
-  width: 100%;
+html, body {
+  margin: 0;
   height: 100%;
 }
 
-.swiper-slide {
-  text-align: center;
-  font-size: 18px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+/* styles.css */
+.container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
 }
+
+.panel {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+
+}
+
+.panel.blue {
+  background-color: blue;
+  z-index: 5;
+}
+
+.panel.red {
+  background-color: red;
+  z-index: 4;
+}
+
+.panel.orange {
+  background-color: orange;
+  z-index: 3;
+}
+
+.panel.purple {
+  background-color: purple;
+  z-index: 2;
+}
+
+.panel.green {
+  background-color: green;
+  z-index: 1;
+}
+

@@ -1,0 +1,97 @@
+@import url('./reset.css');
+@font-face {
+  font-family: 'Pretendard';
+  src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard.woff') format('woff');
+}
+
+body { 
+  margin:0; 
+  padding:0; 
+}
+
+:root {
+  // PC 
+  --pc-width: 1400px;
+}
+
+.hide-txt {
+  position:absolute !important;  
+  width:1px; 
+  height:1px; 
+  overflow:hidden;
+  clip:rect(1px 1px 1px 1px); 
+  clip:rect(1px, 1px, 1px, 1px)
+}
+
+header { 
+  position: relative; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 120px; 
+  line-height: 120px;
+  text-align: center;
+  .logo {
+    width:66px;
+    height: 53px;
+    background: url('../image/logo.png') 50% 50% / 100% no-repeat;
+  }
+} 
+
+.test {
+  max-width: none; /* 최대 너비 제한 해제 */
+  width: 100%; /* 너비를 100%로 설정 */
+}
+
+.contents {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr;
+  max-width: 1400px;
+  margin: 0 auto;
+  width: 100%;
+  .tit {
+    margin-top:60px;
+    font-size:45px;
+    font-weight: 700;
+  }
+
+  .breadcrumbs {
+    font-size: 20px;
+    font-weight: 500;
+    color:#999;
+  } 
+
+  .tit-sub {
+    font-size:25px;
+    font-weight: 500;
+    margin-top:40px;
+  }
+
+}
+
+.tit-sub + .tab-interface {
+  margin-top:20px;
+}
+
+// tab 메뉴
+.tab-list {
+  position: relative;
+  display: flex;
+  li {
+    padding-right: 20px;
+    font-size:15px;
+    color:#999;
+    cursor: pointer;
+    &.is-active {
+      color:#000;
+      font-weight: 700;
+    }
+  }
+
+  li:last-child() {
+    padding-right: 0;
+  }
+}
+
+

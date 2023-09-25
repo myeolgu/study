@@ -4,13 +4,12 @@ const mainAni = {
     this.mainSwiper(); // mainSwiper 함수 호출
     this.textDropdown(); // 메인 진입시 드랍다운 실행
     this.scaleEvent(); // 이미지 커지는 이벤트
+    // this.secondChapter.init(); // 챕터 2번째
   },
 
   textDropdown() {
     this._tit = document.querySelectorAll('.chapter-01 .tit');
-    const mainTl = gsap.timeline();
-    // 메인 TextDropdown 이벤트
-    mainTl.to(this._tit, { yPercent: 50, opacity:1, duration: 1.5, ease: 'ease-in' }); // ypercent 대신 yPercent를 사용합니다.  
+    gsap.to(this._tit, { yPercent: 50, opacity:1, duration: 1.5, ease: 'ease-in' }); // ypercent 대신 yPercent를 사용합니다.  
   },
 
   mainSwiper() {
@@ -32,29 +31,31 @@ const mainAni = {
 
   // 스크롤시 backgroundimg scale 효과
   scaleEvent() {
-    this._titSecond = document.querySelector('.chapter-01 .first .tit');
-    this._descSecond = document.querySelector('.chapter-01 .first .desc');
+    this._titSecond = document.querySelector('.chapter-01 .tit');
+    this._descSecond = document.querySelector('.chapter-01 .desc');
+    this._swiperContents = document.querySelector('.chapter-01 .swiper');
     this._imgContents = document.querySelector('.chapter-01 .img_contents');
     this._imgFirst = document.querySelector('.chapter-01');
 
-    gsap.to(this._imgContents, {
-      ease: "none",
+
+    this.fixedTl = gsap.timeline({
       scrollTrigger: {
-        trigger: this._imgFirst,
-        start: "0",
-        end: "10",
-        scrub: true,
-        markers: true,
-        pin: true,
-        
-        onLeave: () => { 
-          gsap.to(this._imgContents, { width: '100%', height:'100%', bottom:0, duration: 1.5, ease: 'ease-in' }); // ypercent 대신 yPercent를 사용합니다.  
-          gsap.to(this._titSecond, { yPercent:100, color:"white", duration: 1.5, ease: 'ease-in' }); // ypercent 대신 yPercent를 사용합니다.  
-          gsap.to(this._descSecond, { bottom: "20%", duration: 1.5, ease: 'ease-in' }); // ypercent 대신 yPercent를 사용합니다.  
-          this._titSecond.style.mixBlendMode = 'inherit';
-        },
+          trigger: this._imgFirst,
+          start: "1% top",
+          end: "bottom bottom",
+          scrub: 1,
+          pin: true,
+          markers: true,
+          pinSpacing: false,
       },
-    });
+    })
+
+    let fixedTl = gsap.timeline()
+
+    fixedTl.to(this._imgContents, { width: '100%', height:'100%', bottom:0, duration: 1.5, ease: 'ease-in' }) // ypercent 대신 yPercent를 사용합니다.  
+           .to(this._titSecond, { yPercent:100, color:"white", duration: 1.5, ease: 'ease-in' }) // ypercent 대신 yPercent를 사용합니다.  
+           .to(this._descSecond, { bottom: "20%", duration: 1.5, ease: 'ease-in' }) // ypercent 대신 yPercent를 사용합니다.  
+
   },
 };
 
