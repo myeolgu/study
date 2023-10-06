@@ -1,20 +1,17 @@
 gsap.registerPlugin(ScrollTrigger);
+gsap.defaults({ease: "power1", duration: 3});
 
-let panels = gsap.utils.toArray(".container .panel");
-let container = document.querySelector('.container');
+const tl = gsap.timeline();
+tl.to(".page", { yPercent: -100 })
+  .to(".section01", { yPercent: -100 })
+  .to(".section02", { yPercent: -100 })
 
-panels.forEach((panel, index) => {
-  gsap.to(panel, {
-    scrollTrigger: {
-      trigger: container,
-      start: "top top", 
-      end: "+=5000", 
-      markers: true, 
-      pin:true,
-      onEnter: () => {
-        gsap.to(panels, { yPercent: -100, duration: 0.5, ease: "power2.in", stagger: 1 })
-            .pause()
-      },
-    },
-  });
+ScrollTrigger.create({
+  animation: tl,
+  trigger: ".full-page",
+  start: "top top", 
+  end: "+=2000",
+  pin: true,
+  scrub: 1,
+  markers: true
 });

@@ -1,45 +1,75 @@
-html, body {
-  margin: 0;
+html,
+body {
   height: 100%;
+  margin: 0;
 }
 
-/* styles.css */
 .container {
+  height: 100%;
+  position: relative;
+}
+
+.chapter-01 {
   position: relative;
   width: 100%;
-  height: 100vh;
-  overflow: hidden;
+  height: 2000px;
 }
 
-.panel {
-  position: absolute;
-  width: 100%;
-  height: 100%;
+.chapter-02 {
+  position: relative;
+  height: auto;
+  .page {
+    position: relative;
+    height: 2000px;
+    z-index: 4;
+    background: beige;
+  }
 
+  .full-page {
+    position: relative;
+    height: 100vh;
+  }
+
+  .section01 {
+    position: absolute;
+    height: 100vh;
+    z-index: 3;
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+  
+  .section02 {
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    z-index: 2;
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+  
+  .section03 {
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    z-index: 1;
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
 }
 
-.panel.blue {
-  background-color: blue;
-  z-index: 5;
-}
 
-.panel.red {
-  background-color: red;
-  z-index: 4;
-}
 
-.panel.orange {
-  background-color: orange;
-  z-index: 3;
+.chapter-03 {
+  position: relative;
+  .section04 {
+    img {
+      width: 100%;
+    }
+  }
 }
-
-.panel.purple {
-  background-color: purple;
-  z-index: 2;
-}
-
-.panel.green {
-  background-color: green;
-  z-index: 1;
-}
-

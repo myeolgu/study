@@ -1,12 +1,13 @@
 @import url('./reset.css');
+
 @font-face {
   font-family: 'Pretendard';
   src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard.woff') format('woff');
 }
 
-body { 
-  margin:0; 
-  padding:0; 
+body {
+  margin: 0;
+  padding: 0;
 }
 
 :root {
@@ -15,50 +16,50 @@ body {
 }
 
 .hide-txt {
-  position:absolute !important;  
-  width:1px; 
-  height:1px; 
-  overflow:hidden;
-  clip:rect(1px 1px 1px 1px); 
-  clip:rect(1px, 1px, 1px, 1px)
+  position: absolute !important;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(1px 1px 1px 1px);
+  clip: rect(1px, 1px, 1px, 1px)
 }
 
-header { 
-  position: relative; 
+header {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 120px; 
+  height: 120px;
   line-height: 120px;
   text-align: center;
+
   .logo {
-    width:66px;
+    width: 66px;
     height: 53px;
     background: url('../image/logo.png') 50% 50% / 100% no-repeat;
   }
-} 
+}
 
 .contents {
   position: relative;
-
   margin: 0 auto;
   width: 100%;
   .tit {
-    margin-top:60px;
-    font-size:45px;
+    margin-top: 60px;
+    font-size: 45px;
     font-weight: 700;
   }
 
   .breadcrumbs {
     font-size: 20px;
     font-weight: 500;
-    color:#999;
-  } 
+    color: #999;
+  }
 
   .tit-sub {
-    font-size:25px;
+    font-size: 25px;
     font-weight: 500;
-    margin-top:40px;
+    margin-top: 40px;
   }
 
 }
@@ -67,54 +68,47 @@ header {
   position: relative;
   display: flex;
   justify-content: center;
+
   li {
-    padding:0 20px;
-    font-size:20px;
-    color:#bababa;
+    padding: 0 20px;
+    font-size: 20px;
+    color: #bababa;
     cursor: pointer;
+
     &.is-active {
-      color:#000;
+      color: #000;
       text-decoration: underline;
     }
   }
 }
 
+/*
+  1. linear : 전환(transition) 효과가 처음부터 끝까지 일정한 속도로 진행됩니다. 
+  2. ease : 기본값으로, 전환(transition) 효과가 천천히 시작되어, 그다음에는 빨라지고, 마지막에는 다시 느려집니다.
+  3. ease-in : 전환(transition) 효과가 천천히 시작됩니다.
+  4. ease-out : 전환(transition) 효과가 천천히 끝납니다.
+  5. ease-in-out : 전환(transition) 효과가 천천히 시작되어, 천천히 끝납니다.
+  6. cubic-bezier(n,n,n,n) : 전환(transition) 효과가 사용자가 정의한 cubic-bezier 함수에 따라 진행됩니다.
+*/
 
 .swiper-paralix {
-  margin-top:30px;
+  width: 100%;
+  height: 500px;
+  margin-top: 30px;
+  transition-timing-function: linear;
+  .swiper-slide {
+    overflow: hidden;
+  }
 }
 
 .swiper-carousel {
-  margin-top:30px;
+  margin-top: 30px;
 }
 
 .swiper-carousel {
   padding-bottom: 20px !important;
 }
 
-.swiper {
-  width: 100%;
-  height: 100%;
-}
-
-.swiper-slide {
-  text-align: center;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 600px !important;
-}
-
-.swiper-slide img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-
-
-  transition-duration: 1s;
-  transition-timing-function: ease;
-}
 
 .swiper-carousel {
   .swiper-slide {
@@ -122,7 +116,4 @@ header {
     overflow: hidden;
     transition: transform 0.4s ease;
   }
-  
- 
-
 }
